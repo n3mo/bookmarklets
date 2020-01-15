@@ -2,7 +2,10 @@
 // display to include the number of students actually enrolled in the
 // class
 
-(function() {
+// Bookmarklet link:
+// javascript:(function(){s=document.createElement('script');s.type='text/plain';s.src='https://raw.githubusercontent.com/n3mo/bookmarklets/master/mycap_roster.js?v='+parseInt(Math.random()*99999999);document.body.appendChild(s);})();
+
+window.addEventListener('load', (function() {
     // Grab nodes containing student info
     var names = document.querySelectorAll("[id^=roster_studentname]");
     var N_enrolled = names.length;
@@ -15,6 +18,6 @@
     // Update "seats available" to include
     document.getElementById("section-seat-availability")
 	.innerHTML = availability + " (" + N_enrolled + " enrolled)";
-}).call(this);
+}).call(this));
 
 
