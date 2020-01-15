@@ -2,7 +2,7 @@
 // display to include the number of students actually enrolled in the
 // class
 
-function update_roster() {
+(function() {
     // Grab nodes containing student info
     var names = document.querySelectorAll("[id^=roster_studentname]");
     var N_enrolled = names.length;
@@ -15,6 +15,6 @@ function update_roster() {
     // Update "seats available" to include
     document.getElementById("section-seat-availability")
 	.innerHTML = availability + " (" + N_enrolled + " enrolled)";
-}
+}).call(this);
 
-update_roster();
+
